@@ -15,9 +15,9 @@ async function main() {
     }
     const response = await fetch(url);
     const body = await response.text();
-    // var body = fs.readFileSync("output.html", "utf8");
+    // fs.writeFileSync("output.html", body, "utf-8");
 
-    const regex = RegExp("lengthText(.*?)navigationEndpoint", "gm");
+    const regex = RegExp('"text":"(.*?)","badgeStyle"', "gm");
     let playlistEntries = body.match(regex);
 
     let times;
@@ -25,7 +25,7 @@ async function main() {
     let minutes = [];
     let seconds = [];
     playlistEntries.forEach((entry) => {
-        times = entry.match(/simpleText":"(\d*):(\d\d):?(\d\d)?"/);
+        times = entry.match(/text":"(\d*):(\d\d):?(\d\d)?"/);
         if (times[3]) {
             hours.push(times[1]);
             minutes.push(times[2]);
@@ -62,6 +62,6 @@ function ask(query) {
         rl.question(query, (ans) => {
             rl.close();
             resolve(ans);
-        })
+        }),
     );
 }

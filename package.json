@@ -1,16 +1,16 @@
 {
     "name": "youtube-playlist-stats",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Display YouTube playlist length in number of videos and hours.",
     "bin": {
-        "youtube-playlist-stats": "index.mjs"
+        "youtube-playlist-stats": "index.js"
     },
-    "main": "index.mjs",
+    "main": "index.js",
     "files": [
-        "index.mjs"
+        "index.js"
     ],
     "scripts": {
-        "start": "node index.mjs"
+        "start": "node index.js"
     },
     "keywords": [
         "YouTube",
@@ -27,10 +27,10 @@
     "author": "Noran Diaconu",
     "license": "MIT",
     "dependencies": {
-        "node-fetch": "^3.2.10"
+        "node-fetch": "~3.3.2"
     },
     "devDependencies": {
-        "@types/node-fetch": "^2.6.2"
+        "@types/node-fetch": "~2.6.13"
     },
     "type": "module"
 }
