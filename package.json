@@ -1,6 +1,6 @@
 {
     "name": "youtube-playlist-stats",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Display YouTube playlist length in number of videos and hours.",
     "bin": {
         "youtube-playlist-stats": "index.js"
@@ -10,7 +10,8 @@
         "index.js"
     ],
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "build": "tsc && terser index.js -c -m -o index.js"
     },
     "keywords": [
         "YouTube",
@@ -30,7 +31,9 @@
         "node-fetch": "~3.3.2"
     },
     "devDependencies": {
-        "@types/node-fetch": "~2.6.13"
+        "@types/node-fetch": "~2.6.13",
+        "terser": "~5.49.0",
+        "typescript": "~6.0.3"
     },
     "type": "module"
 }
